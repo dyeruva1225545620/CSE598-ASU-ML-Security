@@ -11,8 +11,6 @@ Then we made predictions using smoothed classifier and certify the robust l_0, l
 
 Then we plotted the figures to draw a comparison between different noises (Laplacian, Gaussian and Uniform) against different norms of adversarial perturbations versus certified radius 
 
-We then plotted the top-1 accuracies versus certified radius for different norms of adversarial perturbations for different noises 
-
 We tried finding top-k accuracies but are facing with errors while running the code so we could not plot the graph for accuracy versus certified radius with k as a parameter
 
 But as mentioned in our novelty we computed the certified robust radii against l_∞ adversarial perturbations with randomized smoothing using Laplacian noise for top-1 predictions
