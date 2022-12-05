@@ -17,8 +17,8 @@ We tried finding top-k accuracies but are facing with errors while running the c
 
 But as mentioned in our novelty we computed the certified robust radii against l_∞ adversarial perturbations with randomized smoothing using Laplacian noise for top-1 predictions
 
-The scripts folder contains a train.py script which will train the model for a specified noise and level of sigma and save the model checkpoint to directory ckpts
+The src folder contains a train.py script which will train the model for a specified noise and level of sigma and save the model checkpoint to directory ckpts
 
-The testing script(scripts/test.py) will load the model checkpoint and make predictions using the smoothed classifier and ceritfied l_0, l_1, l_2, l_∞ robust radii
+The testing script(src/test.py) will load the model checkpoint and make predictions using the smoothed classifier and ceritfied l_0, l_1, l_2, l_∞ robust radii
 
 Results.ipynb is used for plotting graph 
