@@ -21,4 +21,4 @@ The src folder contains a train.py script which will train the model for a speci
 
 The testing script(src/test.py) will load the model checkpoint and make predictions using the smoothed classifier and ceritfied l_0, l_1, l_2, l_∞ robust radii
 
-Results.ipynb is used for plotting graph 
+Results.ipynb is used for plotting graphs for certified robust radii for different kinds of noises
