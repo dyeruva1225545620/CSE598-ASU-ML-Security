@@ -20,3 +20,6 @@ The src folder contains a train.py script which will train the model for a speci
 The testing script(src/test.py) will load the model checkpoint and make predictions using the smoothed classifier and ceritfied l_0, l_1, l_2, l_∞ robust radii
 
 Results.ipynb is used for plotting graphs for certified robust radii for different kinds of noises
+
+For top-k predictions, we couldn’t implement it as it was time consuming, and we have to find top-k labels predictions whereit becomes challenging to find the probabilities 𝑝𝑖 exactly. So,we couldn’t try to derive robustness radii for top -k predictions but instead did for top 1 prediction, but we did derive robustness
+radii against 𝑙0 , 𝑙1 , 𝑙2 , 𝑙∞ norms of adversarial perturbations and compare those while using randomized smoothing by Gaussian and Laplacian noise as mentioned in our novelty.
