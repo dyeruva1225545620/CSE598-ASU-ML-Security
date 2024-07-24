@@ -32,7 +32,7 @@ This project aims to derive robust radii using Laplacian noise instead of Gaussi
   - Makes predictions using the smoothed classifier.
   - Certifies 𝑙0, 𝑙1, 𝑙2, and 𝑙∞ robust radii.
 
-- **Results.ipynb:** 
+- **results.ipynb:** 
   - Notebook for plotting graphs of certified robust radii for different types of noise.
 
 ## Challenges and Limitations
