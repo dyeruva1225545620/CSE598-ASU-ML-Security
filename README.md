@@ -1,25 +1,45 @@
-# MLProject
-# To derive tight robustness in the 𝑙∞ norm for top-k predictions against Advesarial perturbations using randomized smoothing with Laplacian noise
- We are trying to do , instead of Gaussian noise in randomized smoothing we derive robust radii using Laplacian noise and find tight robust radii in  l_∞ , l_0, l_2, l_1 norm bounded perturbation and compare the results
- 
-# Steps in our approach
-We trained the model with CIFAR-10 dataset using WideResNet model with Laplacian data augmentation with sigma value 0.5 and saved the model under the name of cifar_laplace_0.50 and we saved the checkpoint
+# ML Security and Fairness (CSE-598)
 
-We tested the model from the saved checkpoint 
+## Project Title
+**Deriving Tight Robustness in the 𝑙∞ Norm for Top-k Predictions Against Adversarial Perturbations Using Randomized Smoothing with Laplacian Noise**
 
-Then we made predictions using smoothed classifier and certify the robust l_0, l_1, l_2, l_∞ radii for these predictions
+## Project Overview
+This project aims to derive robust radii using Laplacian noise instead of Gaussian noise in randomized smoothing. We focus on finding tight robust radii in 𝑙∞, 𝑙0, 𝑙2, and 𝑙1 norm-bounded perturbations and comparing the results.
 
-Then we plotted the figures to draw a comparison between different noises (Laplacian, Gaussian and Uniform) against different norms of adversarial perturbations versus certified radius 
+## Approach
+1. **Model Training:**
+   - Trained the model on the CIFAR-10 dataset using the WideResNet model.
+   - Applied Laplacian data augmentation with a sigma value of 0.5.
+   - Saved the trained model as `cifar_laplace_0.50` and stored the checkpoint.
 
-We tried finding top-k accuracies but are facing with errors while running the code so we could not plot the graph for accuracy versus certified radius with k as a parameter
+2. **Model Testing:**
+   - Loaded the saved checkpoint.
+   - Made predictions using a smoothed classifier.
+   - Certified the robust radii for 𝑙0, 𝑙1, 𝑙2, and 𝑙∞ norms for these predictions.
 
-But as mentioned in our novelty we computed the certified robust radii against l_∞ adversarial perturbations with randomized smoothing using Laplacian noise for top-1 predictions
+3. **Comparison and Results:**
+   - Plotted figures to compare different noises (Laplacian, Gaussian, and Uniform) against various norms of adversarial perturbations versus certified radius.
+   - Attempted to find top-k accuracies but encountered errors, preventing the plotting of accuracy versus certified radius with k as a parameter.
+   - Focused on computing the certified robust radii against 𝑙∞ adversarial perturbations using Laplacian noise for top-1 predictions.
 
-The src folder contains a train.py script which will train the model for a specified noise and level of sigma and save the model checkpoint to directory ckpts
+## File Structure
+- **src/train.py:** 
+  - Script to train the model for a specified noise and sigma level.
+  - Saves the model checkpoint to the `ckpts` directory.
 
-The testing script(src/test.py) will load the model checkpoint and make predictions using the smoothed classifier and ceritfied l_0, l_1, l_2, l_∞ robust radii
+- **src/test.py:** 
+  - Script to load the model checkpoint.
+  - Makes predictions using the smoothed classifier.
+  - Certifies 𝑙0, 𝑙1, 𝑙2, and 𝑙∞ robust radii.
 
-Results.ipynb is used for plotting graphs for certified robust radii for different kinds of noises
+- **Results.ipynb:** 
+  - Notebook for plotting graphs of certified robust radii for different types of noise.
 
-For top-k predictions, we couldn’t implement it as it was time consuming, and we have to find top-k labels predictions whereit becomes challenging to find the probabilities 𝑝𝑖 exactly. So,we couldn’t try to derive robustness radii for top -k predictions but instead did for top 1 prediction, but we did derive robustness
-radii against 𝑙0 , 𝑙1 , 𝑙2 , 𝑙∞ norms of adversarial perturbations and compare those while using randomized smoothing by Gaussian and Laplacian noise as mentioned in our novelty.
+## Challenges and Limitations
+- **Top-k Predictions:** 
+  - Encountered difficulties in finding exact probabilities for top-k labels.
+  - Could not implement top-k predictions due to time constraints.
+  - Focused on deriving robustness radii for top-1 predictions.
+
+## Conclusion
+Despite the challenges with top-k predictions, we successfully derived and compared robustness radii against 𝑙0, 𝑙1, 𝑙2, and 𝑙∞ norms of adversarial perturbations. This was achieved using randomized smoothing with both Gaussian and Laplacian noise, emphasizing our project's novelty.
